@@ -24,7 +24,7 @@ int numeroX(){
 	return numrandom;
 }
 
-int  PrimeraJugada(){
+void  PrimeraJugada(){
 	 op=2;
 	
 		CartaJ1=numeroX();
@@ -61,7 +61,7 @@ int  PrimeraJugada(){
 
 		}
 
-		return op;
+		//return op;
 	
 }
 
@@ -88,23 +88,22 @@ void revisar(){
 		cout<<"El total de la banca fue: " <<Tb<<endl;
 		endgame=true;
 	}
-	if (Tj>Tb and Tj<21 and Tb<21 and op==0){
-		cout<<endl;
-		cout<<"FELICIDADES HAS GANADO LA PARTIDA"<<endl;
-		cout<< "Tu total Fue: "<<Tj<<endl;
-		cout<<"El total de la banca fue: " <<Tb<<endl;
-		endgame=true;
-	}
-	if (Tj<Tb and Tj<21 and Tb<21 and op==0){
-		cout<<endl;
-		cout<<"HAS PERDIDO LA PARTIDA, LA BANCA GANA"<<endl;
-		cout<< "Tu total Fue: "<<Tj<<endl;
-		cout<<"El total de la banca fue: " <<Tb<<endl;
-		endgame=true;
-	}
-
-
-
+	if (op==0){
+		if (Tj>Tb){
+				cout<<endl;
+				cout<<"FELICIDADES HAS GANADO LA PARTIDA"<<endl;
+				cout<< "Tu total Fue: "<<Tj<<endl;
+				cout<<"El total de la banca fue: " <<Tb<<endl;
+				endgame=true;
+		}
+		if (Tj<Tb){
+				cout<<endl;
+				cout<<"HAS PERDIDO LA PARTIDA, LA BANCA GANA"<<endl;
+				cout<< "Tu total Fue: "<<Tj<<endl;
+				cout<<"El total de la banca fue: " <<Tb<<endl;
+				endgame=true;
+		}
+	}	
 }
 
 void revisarbanca(){
@@ -113,7 +112,7 @@ void revisarbanca(){
 	 }
 }
 
-void Jugar(int op){
+void Jugar(){
 	if (endgame!=true){
 		do {
 
@@ -124,6 +123,7 @@ void Jugar(int op){
 				CartaJ1=numeroX();
 				//Tj+=CartaJ1;
 				CartaB1=numeroX();
+
 				if (op!=0){
 					cout<< "Tu carta es: "<< CartaJ1<<endl;
 					Tj+=CartaJ1;
@@ -169,8 +169,9 @@ void Jugar(int op){
 				
 				
 		}while (op==1);
-		revisar();
+		//revisar();
 
+		
 	}
 }
 
@@ -181,8 +182,9 @@ int main(int argc, char const *argv[])
 	cout<<"Bienvenido a 21 tambien conocido como BlackJack"<<endl;
 	cout<<"Reglas: "<<endl;// Sampen las reglas ustedes.. que hueva
 
-	op1=PrimeraJugada();
-	Jugar(op1);
+	PrimeraJugada();
+	Jugar();
+	revisar();
 
 
 	return 0;

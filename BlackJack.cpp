@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int CartaJ1, CartaJ2, CartaB1,CartaB2, numrandom,Tj=0,Tb=0; // Total jugador, total Banca 
+int  numrandom,Tj=0,Tb=0; // Total jugador, total Banca 
 int rev;
 int op;
 bool endgame=false;
@@ -18,22 +18,29 @@ int probabilidad(){
 
 }
 
-int numeroX(){
-
+/*int numeroX(){
+	srand(time(0));
 	numrandom=1+(rand()%10);
 	return numrandom;
-}
+}*/
 
 void  PrimeraJugada(){
 	 op=2;
 	
-		CartaJ1=numeroX();
+
+	srand(time(0));
+    int CartaJ1 = 1+(rand()%10);
+    int CartaJ2 = 1+(rand()%10);
+    int CartaB1 = 1+(rand()%10);
+    int CartaB2 = 1+(rand()%10);
+
+		/*CartaJ1=numeroX();
 		//Tj+=CartaJ1;
 		CartaB1=numeroX();
 		//Tb+=CartaB1;
 
 		CartaJ2=numeroX();
-		CartaB2=numeroX();
+		CartaB2=numeroX();*/
 
 		cout<< "Tus primeras cartas son: "<< CartaJ1<<" y "<<CartaJ2<<endl;
 		Tj=CartaJ1+CartaJ2;
@@ -120,9 +127,8 @@ void Jugar(){
 						op=2;
 				}
 				
-				CartaJ1=numeroX();
-				//Tj+=CartaJ1;
-				CartaB1=numeroX();
+				int CartaJ1 = 1+(rand()%10);
+ 				int CartaB1 = 1+(rand()%10);
 
 				if (op!=0){
 					cout<< "Tu carta es: "<< CartaJ1<<endl;

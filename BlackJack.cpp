@@ -28,7 +28,7 @@ void  PrimeraJugada(){
 	 op=2;
 	
 
-	srand(time(0));
+	srand(time(NULL));
     int CartaJ1 = 1+(rand()%10);
     int CartaJ2 = 1+(rand()%10);
     int CartaB1 = 1+(rand()%10);
@@ -76,8 +76,8 @@ void revisar(){
 	if (Tj==21){
 		cout<<endl;
 		cout<<"FELICIDADES HAS GANADO LA PARTIDA"<<endl;
-		cout<< "Tu total Fue: "<<Tj<<endl;
-		cout<<"El total de la banca fue" <<Tb<<endl;
+		cout<< "Tu total fue: "<<Tj<<endl;
+		cout<<"El total de la banca fue: " <<Tb<<endl;
 		endgame=true;
 
 	}

@@ -133,7 +133,7 @@ void revisar(){
 }
 
 void revisarbanca(){
-	 if (Tb>17 and Tb<21){
+	 if (Tb>=17 and Tb<21){
 	 	banca=!banca;
 	 }
 }
@@ -159,18 +159,16 @@ void Jugar(){
 					revisarbanca();
 				}
 
-				if (banca){
-					cout<<" LA BANCA NO HACE CAMBIOS"<<endl;
-
+				if (Tb<=17){
+					//cout<< "La carta de la Banca es:  "<<CartaB1<<endl;
+					cout<<"LA BANCA HA TOMADO OTRA CARTA"<<endl<<endl;
+					cout<<"-------------------------------------"<<endl<<endl;
+					cout <<endl;
+					Tb+=CartaB1;
+					//cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
 				}
 				else {
-				//cout<< "La carta de la Banca es:  "<<CartaB1<<endl;
-				cout<<"LA BANCA HA TOMADO OTRA CARTA"<<endl<<endl;
-				cout<<"-------------------------------------"<<endl<<endl;
-				cout <<endl;
-				Tb+=CartaB1;
-				//cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
-
+           cout<<" LA BANCA NO HACE CAMBIOS"<<endl;
 				}
 
 				//cout<<"El total de la Banca es: "<<Tb<<endl<<endl;

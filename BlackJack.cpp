@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int  numrandom,Tj=0,Tb=0; // Total jugador, total Banca 
+int  numrandom,Tj=0,Tb=0; // Total jugador, total Banca
 int rev;
 int op;
 bool endgame=false;
@@ -26,7 +26,7 @@ int probabilidad(){
 
 void  PrimeraJugada(){
 	 op=2;
-	
+
 
 	srand(time(NULL));
     int CartaJ1 = 1+(rand()%10);
@@ -55,23 +55,28 @@ void  PrimeraJugada(){
 
 
 		cout <<"¿Cual es tu siguiente movimiento?"<<endl<<"Para seguir tomando cartas presiona 1, para quedarte con las que tienes presiona 0"<<endl;
-		
-		while (op!=0 and op!=1){
-			cin>>op;
-			cout<<op;
-			if (op!=0 and op!=1){
-				cout<<"Opcion no valida, vuelve a elegir."<<endl;
-			}
-			else {
-				break;
-			}
-
+		cin>>op;
+		if(op==1){
+		cout<<"Ha elegido tomar otra carta. "<<endl;
+		}
+		else if(op==0) {
+		cout<<"Decidio quedarse con las cartas actuales. " <<endl;
+		}
+	 while(op!=0 and op!=1){
+		cin>>op;
+		cout<<op <<endl;
+		if (op!=0 and op!=1){
+			cout<<"Opcion no valida, vuelve a elegir."<<endl;
+		}
+		else {
+			break;
 		}
 
-		//return op;
-	
-}
+	}
 
+	//return op;
+
+}
 void revisar(){
 	if (Tj==21){
 		cout<<endl;
@@ -124,7 +129,7 @@ void revisar(){
 				cout<<"El total de la banca fue: " <<Tb<<endl;
 				endgame=true;
 		}
-	}	
+	}
 }
 
 void revisarbanca(){
@@ -140,7 +145,7 @@ void Jugar(){
 				if (op==1){
 						op=2;
 				}
-				
+
 				int CartaJ1 = 1+(rand()%10);
  				int CartaB1 = 1+(rand()%10);
 
@@ -165,7 +170,7 @@ void Jugar(){
 				cout <<endl;
 				Tb+=CartaB1;
 				//cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
-				
+
 				}
 
 				//cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
@@ -177,7 +182,7 @@ void Jugar(){
 
 				cout <<"¿Cual es tu siguiente movimiento?"<<endl<<"Para seguir tomando cartas presiona 1, para quedarte con las que tienes presiona 0"<<endl;
 
-			
+
 				while (op!=0 and op!=1){
 						cin>>op;
 						//cout<<op;
@@ -186,12 +191,12 @@ void Jugar(){
 						}
 				}
 
-				
-				
+
+
 		}while (op==1);
 		//revisar();
 
-		
+
 	}
 }
 

@@ -16,7 +16,7 @@ bool banca=false;
 int probabilidad(){
 
 
-}
+};
 
 /*int numeroX(){
 	srand(time(0));
@@ -91,6 +91,20 @@ void revisar(){
 	if (Tj>21){
 		cout<<endl;
 		cout<<"Has superado el numero 21, debido a esto pierdes automaticamente"<<endl;
+		cout<<"Tu total fue: "<<Tj<<endl;
+		cout<<"El total de la banca fue: " <<Tb<<endl;
+		endgame=true;
+	}
+	if (Tb>21){
+		cout<<endl;
+		cout<<"La banca ha superado el numero 21, debido a esto pierde automaticamente"<<endl;
+		cout<<"Tu total fue: "<<Tj<<endl;
+		cout<<"El total de la banca fue: " <<Tb<<endl;
+		endgame=true;
+	}
+	if (Tj>21 && Tb>21){
+		cout<<endl;
+		cout<<"Ambos han superado el numero 21, debido a esto no hay ningun ganador"<<endl;
 		cout<<"Tu total fue: "<<Tj<<endl;
 		cout<<"El total de la banca fue: " <<Tb<<endl;
 		endgame=true;
@@ -186,7 +200,8 @@ int main(int argc, char const *argv[])
 {
 	int op1;
 	cout<<"Bienvenido a 21 tambien conocido como BlackJack"<<endl;
-	cout<<"Reglas: "<<endl;// Sampen las reglas ustedes.. que hueva
+	cout<<"Reglas: "<<endl;
+	cout<<"";
 
 	PrimeraJugada();
 	Jugar();

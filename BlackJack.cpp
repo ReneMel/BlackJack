@@ -114,6 +114,7 @@ void revisar(){
 		cout<<"El total de la banca fue: " <<Tb<<endl;
 		endgame=true;
 	}
+
 	if (op==0){
 		if (Tj>Tb){
 				cout<<endl;
@@ -129,11 +130,25 @@ void revisar(){
 				cout<<"El total de la banca fue: " <<Tb<<endl;
 				endgame=true;
 		}
+	  	if(Tj==Tb){
+			cout<<endl;
+			cout <<"La banca y el jugador han empatado."<<endl;
+			cout<<"Tu total fue: "<<Tj<<endl;
+			cout<<"El total de la banca fue: " <<Tb<<endl;
+			endgame=true;
+		}
+		if(Tj>21 && Tb>21){
+		cout<<endl;
+		cout <<"Ambos se han pasado de 21, por l tanto NADIE gana. "<<endl;
+		cout<<"Tu total fue: "<<Tj<<endl;
+		cout<<"El total de la banca fue: " <<Tb<<endl;
+		endgame=true;
 	}
+}
 }
 
 void revisarbanca(){
-	 if (Tb>=17 and Tb<21){
+	 if (Tb>17 and Tb<21){
 	 	banca=!banca;
 	 }
 }
@@ -171,7 +186,7 @@ void Jugar(){
            cout<<" LA BANCA NO HACE CAMBIOS"<<endl;
 				}
 
-				//cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
+				cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
 
 				revisar();
 				if (endgame){

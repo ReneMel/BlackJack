@@ -116,21 +116,21 @@ void revisar(){
 	}
 
 	if (op==0){
-		if (Tj>Tb){
+		if (Tj>Tb && Tj<=21){
 				cout<<endl;
 				cout<<"FELICIDADES HAS GANADO LA PARTIDA"<<endl;
 				cout<< "Tu total Fue: "<<Tj<<endl;
 				cout<<"El total de la banca fue: " <<Tb<<endl;
 				endgame=true;
 		}
-		if (Tj<Tb){
+		if (Tj<Tb && Tb<=21){
 				cout<<endl;
 				cout<<"HAS PERDIDO LA PARTIDA, LA BANCA GANA"<<endl;
 				cout<< "Tu total Fue: "<<Tj<<endl;
 				cout<<"El total de la banca fue: " <<Tb<<endl;
 				endgame=true;
 		}
-	  	if(Tj==Tb){
+	  	if(Tj==Tb && Tj<=21 && Tb<=21){
 			cout<<endl;
 			cout <<"La banca y el jugador han empatado."<<endl;
 			cout<<"Tu total fue: "<<Tj<<endl;
@@ -139,7 +139,7 @@ void revisar(){
 		}
 		if(Tj>21 && Tb>21){
 		cout<<endl;
-		cout <<"Ambos se han pasado de 21, por l tanto NADIE gana. "<<endl;
+		cout <<"Ambos se han pasado de 21, por lo tanto NADIE gana. "<<endl;
 		cout<<"Tu total fue: "<<Tj<<endl;
 		cout<<"El total de la banca fue: " <<Tb<<endl;
 		endgame=true;
@@ -168,6 +168,7 @@ void Jugar(){
 					cout<< "Tu carta es: "<< CartaJ1<<endl;
 					Tj+=CartaJ1;
 					cout<<"Tu total es: "<<Tj<<endl;
+					int CartaB1 = 1+(rand()%10);
 				}
 
 				if (endgame!=true){
@@ -186,7 +187,7 @@ void Jugar(){
            cout<<" LA BANCA NO HACE CAMBIOS"<<endl;
 				}
 
-				cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
+				//cout<<"El total de la Banca es: "<<Tb<<endl<<endl;
 
 				revisar();
 				if (endgame){
@@ -208,7 +209,7 @@ void Jugar(){
 
 		}while (op==1);
 		//revisar();
-
+ 
 
 	}
 }
@@ -219,7 +220,15 @@ int main(int argc, char const *argv[])
 	int op1;
 	cout<<"Bienvenido a 21 tambien conocido como BlackJack"<<endl;
 	cout<<"Reglas: "<<endl;
-	cout<<"";
+	cout<<endl;
+	cout<<"1.A cada jugador se le repartiran 2 cartas al inicio."<<endl;
+	cout<<endl;
+	cout<<"2.El jugador tendra la opcion de agarrar otra carta o quedarse con las que tiene"<<endl;
+	cout<<endl;
+	cout<<"3.Para ganar el juego la suma del numero de cartas que se posee debe de ser el mas cercano a 21 o 21."<<endl;
+	cout<<endl;
+	cout<<"4.Un BlackJack se obtiene con un 10 y 11, sin embargo se le dio el valor de 1 a nuestro As por lo que esto no sera posible."<<endl;
+	cout<<endl;
 
 	PrimeraJugada();
 	Jugar();

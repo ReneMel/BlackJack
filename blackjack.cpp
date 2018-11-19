@@ -87,53 +87,53 @@ void Probabilidad(int CartaJ1, int CartaJ2, int TotalJugador){
 	// carta 2, la cual solo funcionará en la primera tirada 
 	if (CartaJ2!=0){
 		if (as!=0){
-				if(CartaJ1==1){
+				if(CartaJ2==1){
 				as--;
 				}
 		}
 
 		if (dos!=0){
-				if(CartaJ1==2){
+				if(CartaJ2==2){
 				dos--;
 				}
 		}
 		if (tres!=0){
-				if(CartaJ1==3){
+				if(CartaJ2==3){
 				tres--;
 				}
 		}
 		if (cuatro!=0){
-				if(CartaJ1==4){
+				if(CartaJ2==4){
 				cuatro--;
 				}
 		}
 		if (cinco!=0){
-				if(CartaJ1==5){
+				if(CartaJ2==5){
 				cinco--;
 				}
 		}
 		if (seis!=0){
-				if(CartaJ1==6){
+				if(CartaJ2==6){
 				seis--;
 				}
 		}
 		if (siete!=0){
-				if(CartaJ1==7){
+				if(CartaJ2==7){
 				siete--;
 				}
 		}
 		if (ocho!=0){
-				if(CartaJ1==8){
+				if(CartaJ2==8){
 				ocho--;
 				}
 		}
 		if (nueve!=0){
-			if(CartaJ1==9){
+			if(CartaJ2==9){
 			nueve--;
 			}
 		}
 		if (diez!=0){
-			if(CartaJ1==10){
+			if(CartaJ2==10){
 			diez--;
 			}
 		}
